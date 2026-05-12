@@ -29,8 +29,10 @@ export const PACK_LABELS: Record<Pack, string> = {
   microsoft: "Microsoft",
 };
 
+const BASE = import.meta.env.BASE_URL;
+
 function icon(id: string, name: string, bundleId: string, pack: Pack): AppIcon {
-  return { id, name, bundleId, icon: `/icons/${id}.png`, pack };
+  return { id, name, bundleId, icon: `${BASE}icons/${id}.png`, pack };
 }
 
 export const APP_ICONS: AppIcon[] = [
