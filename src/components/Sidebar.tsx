@@ -13,7 +13,7 @@ interface SidebarProps {
 
 type Tab = "colors" | "legends" | "settings";
 
-export function Sidebar({ baseColor, keycapColor, legendColor, onBaseColorClick, onLegendColorClick }: SidebarProps) {
+export function Sidebar({ keycapColor, legendColor, onBaseColorClick, onLegendColorClick }: SidebarProps) {
   const [tab, setTab] = useState<Tab>("settings");
 
   const tabs: { id: Tab; label: string }[] = [

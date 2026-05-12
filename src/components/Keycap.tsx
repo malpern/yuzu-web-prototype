@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { KeyDef } from "../data/keyboard-layout";
 import { UNIT, GAP_BETWEEN_KEYS } from "../data/keyboard-layout";
 import type { AppIcon } from "../data/app-icons";
