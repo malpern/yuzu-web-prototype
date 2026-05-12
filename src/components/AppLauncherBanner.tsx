@@ -2,19 +2,20 @@ import type { FKeyDisplay } from "../hooks/useKeyboard";
 import type { AppIcon } from "../data/app-icons";
 import { PACK_PRESETS, getPackIcons, type PackPreset } from "../data/packs";
 
+const BASE = import.meta.env.BASE_URL;
 const SHOWCASE_ICONS = [
-  { name: "Figma", icon: "/icons/figma.png" },
-  { name: "Slack", icon: "/icons/slack.png" },
-  { name: "Spotify", icon: "/icons/spotify.png" },
-  { name: "Chrome", icon: "/icons/chrome.png" },
-  { name: "Discord", icon: "/icons/discord.png" },
-  { name: "Notion", icon: "/icons/notion.png" },
-  { name: "Xcode", icon: "/icons/xcode.png" },
-  { name: "Linear", icon: "/icons/linear.png" },
-  { name: "Terminal", icon: "/icons/terminal.png" },
-  { name: "Sketch", icon: "/icons/sketch.png" },
-  { name: "Cursor", icon: "/icons/cursor.png" },
-  { name: "Zoom", icon: "/icons/zoom.png" },
+  { name: "Figma", icon: `${BASE}icons/figma.png` },
+  { name: "Slack", icon: `${BASE}icons/slack.png` },
+  { name: "Spotify", icon: `${BASE}icons/spotify.png` },
+  { name: "Chrome", icon: `${BASE}icons/chrome.png` },
+  { name: "Discord", icon: `${BASE}icons/discord.png` },
+  { name: "Notion", icon: `${BASE}icons/notion.png` },
+  { name: "Xcode", icon: `${BASE}icons/xcode.png` },
+  { name: "Linear", icon: `${BASE}icons/linear.png` },
+  { name: "Terminal", icon: `${BASE}icons/terminal.png` },
+  { name: "Sketch", icon: `${BASE}icons/sketch.png` },
+  { name: "Cursor", icon: `${BASE}icons/cursor.png` },
+  { name: "Zoom", icon: `${BASE}icons/zoom.png` },
 ];
 
 const DISPLAY_OPTIONS: { value: FKeyDisplay; label: string; desc: string }[] = [
