@@ -259,7 +259,7 @@ function PackPicker({
           </button>
         </div>
 
-        <div style={{ display: "flex", gap: 10, overflowX: "auto" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 8 }}>
           {PACK_PRESETS.map((preset) => {
             const icons = getPackIcons(preset);
             return (
@@ -267,12 +267,10 @@ function PackPicker({
                 key={preset.id}
                 onClick={() => applyPreset(preset)}
                 style={{
-                  flexShrink: 0,
-                  width: 180,
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 10,
-                  padding: "14px 12px 12px",
+                  borderRadius: 8,
+                  padding: "10px 10px 8px",
                   cursor: "pointer",
                   transition: "all 0.15s",
                   textAlign: "left",
@@ -286,28 +284,27 @@ function PackPicker({
                   e.currentTarget.style.background = "rgba(255,255,255,0.04)";
                 }}
               >
-                {/* Icon preview row */}
-                <div style={{ display: "flex", gap: 4, marginBottom: 10, flexWrap: "wrap" }}>
-                  {icons.slice(0, 6).map((icon, i) =>
+                <div style={{ display: "flex", gap: 3, marginBottom: 8 }}>
+                  {icons.slice(0, 4).map((icon, i) =>
                     icon ? (
                       <img
                         key={i}
                         src={icon.icon}
                         alt={icon.name}
                         style={{
-                          width: 24,
-                          height: 24,
-                          borderRadius: 5,
-                          boxShadow: "0 1px 4px rgba(0,0,0,0.3)",
+                          width: 20,
+                          height: 20,
+                          borderRadius: 4,
+                          boxShadow: "0 1px 3px rgba(0,0,0,0.3)",
                         }}
                       />
                     ) : null
                   )}
                 </div>
-                <div style={{ fontSize: 12, fontWeight: 600, color: "#fff", marginBottom: 2 }}>
+                <div style={{ fontSize: 11, fontWeight: 600, color: "#fff", marginBottom: 1 }}>
                   {preset.name}
                 </div>
-                <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", lineHeight: 1.3 }}>
+                <div style={{ fontSize: 9, color: "rgba(255,255,255,0.35)", lineHeight: 1.3 }}>
                   {preset.description}
                 </div>
               </button>
