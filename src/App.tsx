@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { useKeyboard } from "./hooks/useKeyboard";
 import { Keyboard } from "./components/Keyboard";
 import { Sidebar } from "./components/Sidebar";
 import { IconPickerModal } from "./components/IconPickerModal";
 import { ColorPickerModal } from "./components/ColorPickerModal";
 import { AppLauncherBanner } from "./components/AppLauncherBanner";
+import { OrderConfirmation } from "./components/OrderConfirmation";
 
 export default function App() {
+  const [showOrder, setShowOrder] = useState(false);
   const {
     assignments,
     activeKey,
@@ -29,6 +32,18 @@ export default function App() {
   } = useKeyboard();
 
   const totalPrice = (80 + assignedCount * 0.07).toFixed(2);
+
+  if (showOrder) {
+    return (
+      <OrderConfirmation
+        assignments={assignments}
+        keycapColor={keycapColor}
+        legendColor={legendColor}
+        fkeyDisplay={fkeyDisplay}
+        onBack={() => setShowOrder(false)}
+      />
+    );
+  }
 
   return (
     <div
@@ -72,6 +87,7 @@ export default function App() {
             ${totalPrice}
           </span>
           <button
+            onClick={() => setShowOrder(true)}
             style={{
               backgroundColor: "#DC633E",
               color: "#fff",
