@@ -249,7 +249,7 @@ export function OrderConfirmation({ assignments, keycapColor, legendColor, fkeyD
             lineHeight: 1.4,
             margin: 0,
           }}>
-            {JSON.stringify(JSON.parse(atob(deepLink.split("config=")[1])), null, 2)}
+            {JSON.stringify(JSON.parse(atob(decodeURIComponent(deepLink.split("config=")[1]))), null, 2)}
           </pre>
         </details>
 
